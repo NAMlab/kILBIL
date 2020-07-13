@@ -9,18 +9,13 @@ load(file = "/data/counts_ind") # count table for indistinguishable reads
 
 # 2. Generate the placeholder tables to fill with mapping estimates ----
 
-itag.class = itag.bil
-itag.class[,colnames(itag.class) %in% colnames(master.table)] = NA
-
-itag.segment = itag.bil
-itag.segment[,colnames(itag.segment) %in% colnames(master.table)] = NA
-
+changepoint.list = list()
 
 # 3. Run the change point analysis on the count table for S. lycopersicum-unique reads
 
+
+
 for(i in colnames(master.table)){ # Run for each line
-  
-  print(i)
   
   # Generate a vector of expression deviations from the mean across all quantified genes for the S. lycopersicum-unique reads
   period1 = log10(counts.lyc[,i]/itag.lyc[,"MeanCountLyc"])
@@ -69,7 +64,8 @@ for(i in colnames(master.table)){ # Run for each line
     transbin.pvalue = sapply(unique(tmp1), function(y)  t.test(tmp2[tmp1 ==y],tmp2[tmp1 !=y], alternative = "less")$p.value)
     transbin.estimate = sapply(unique(tmp1), function(y)  t.test(tmp2[tmp1 ==y],tmp2[tmp1 !=y], alternative = "less")$estimate[1])
     
+    changepoint.list[[i]] = data.frame(estimate = unlist(transbin.estimate), p.value = transbin.pvalue)
+    
 }
-
 
 
