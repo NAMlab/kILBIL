@@ -7,13 +7,11 @@ load(file = "/data/master_table") # table of marker-based introgression mapping 
 load(file = "/data/counts_lyc") # count table for S. lycopersicum-unique reads
 load(file = "/data/counts_ind") # count table for indistinguishable reads
 
-# 2. Generate the placeholder tables to fill with mapping estimates ----
+# 2. Generate the placeholder list ----
 
 changepoint.list = list()
 
 # 3. Run the change point analysis on the count table for S. lycopersicum-unique reads
-
-
 
 for(i in colnames(master.table)){ # Run for each line
   
