@@ -22,7 +22,9 @@ published in: Nature Genetics vol XXX
 
 The full methods description is provided in the Methods section of the manuscript and the Supplemental Materials. 
 Scripts provided here use exemplary processed data (folder /data).
+
 The full transcriptome data is available publicly from a GEO repository under accession number: GSE151451
+
 The full metabolome data is available from e!DAL repository under accession number: XXXXX
 
 All results of the study can be browsed interactively in a dedicated online "kILBIL" browser: https://szymanskilab.shinyapps.io/kilbil/
