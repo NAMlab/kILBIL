@@ -3,7 +3,6 @@
 # 1. Load the input data ----
 
 load(file = "/data/itag30") # ITAG30 genome annotation file
-load(file = "/data/master_table") # table of marker-based introgression mapping integrated from Ofner et al. 2016
 load(file = "/data/counts_lyc") # count table for S. lycopersicum-unique reads
 load(file = "/data/counts_ind") # count table for indistinguishable reads
 
